@@ -279,7 +279,7 @@ class CGI(basecgi.CGI):
         buf = self.escape(buf)
         # skip "'()<>[]\
         buf = re.sub(r"https?://[!\x23-\x26\x2A-\x3B=\x3F-\x5A\x5E-\x7E]{2,}",
-                     r'<a href="\g<0>">\g<0></a>',
+                     r'<a href="\g<0>" target="_blink">\g<0></a>',
                      buf)
         buf = re.sub(r"(&gt;&gt;)([0-9a-f]{8})",
                      self.res_anchor(r"\2", appli, title, absuri=absuri) +
